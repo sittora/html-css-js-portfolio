@@ -229,6 +229,17 @@ section {
     padding: 1rem;
     width: 8rem;
     border-radius: 2rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  }
+  
+  .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
   }
   
   .btn-color-1,
@@ -409,6 +420,17 @@ section {
   .project-btn {
     color: black;
     border-color: rgb(163, 163, 163);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  }
+
+  .project-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .project-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
   }
 
   /* CONTACT */
@@ -423,12 +445,14 @@ section {
   .contact-info-upper-container {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    background: rgb(250, 250, 250);
     border-radius: 2rem;
-    border: rgb(53, 53, 53) 0.1rem solid;
-    border-color: rgb(163, 163, 163);
-    background: (250, 250, 250);
+    border: rgb(163, 163, 163) 0.1rem solid;
+    padding: 2rem;
     margin: 2rem auto;
-    padding: 0.5rem;
+    max-width: 800px;
   }
 
   .contact-info-container {
@@ -436,17 +460,35 @@ section {
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    margin: 1rem;
+    padding: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 1rem;
+    background: white;
   }
 
-  .contact-info-container p {
-    font-size: larger;
+  .contact-info-container:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .contact-link {
+    font-size: 1.1rem;
+    text-decoration: none;
+    color: rgb(85, 85, 85);
+    transition: color 0.3s ease;
+  }
+
+  .contact-link:hover {
+    color: black;
   }
 
   .contact-icon {
-    cursor: default;
+    height: 2rem;
+    width: 2rem;
+    object-fit: contain;
   }
-  
+
   .email-icon {
     height: 2.5rem;
   }
@@ -462,7 +504,22 @@ section {
   text-align: center;
   }
 
-/* Add some spacing between the last image and the title */
-.project-img-container:last-of-type {
-  margin-bottom: 1.5rem;
+/* Individual project card */
+.details-container.color-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  background: rgb(250, 250, 250);
+  border-radius: 2rem;
+  border: rgb(163, 163, 163) 0.1rem solid;
+  padding: 1.5rem;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Add hover effect to make cards more interactive */
+.details-container.color-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15);
 }
