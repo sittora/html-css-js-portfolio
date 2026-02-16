@@ -1,104 +1,613 @@
-@media screen and (max-width:1400px) {
-   #profile {
-      height: 83vh;
-      margin-bottom: 6rem;
-    }
-    .about-containers {
-      flex-wrap: wrap;
-    }
-    #contact,
-    #projects {
-      height: fit-content;
-    }
+/* ================================================================
+   RESPONSIVE MEDIA QUERIES - Burgundy Theme
+   Harmonious sizing and button styling across all breakpoints
+   ================================================================ */
+
+/* Large Desktop - 1400px and below */
+@media screen and (max-width: 1400px) {
+  #profile {
+    min-height: 85vh;
+    height: auto;
+    margin-bottom: 4rem;
+  }
+  
+  .about-containers {
+    flex-wrap: wrap;
+  }
+  
+  #contact,
+  #projects {
+    height: fit-content;
+  }
+  
+  section {
+    margin: 0 6rem;
+  }
+  
+  .btn {
+    padding: 0.875rem 1.5rem;
+    min-width: 140px;
+  }
 }
 
-
-@media screen and (max-width:1200px) {
-   #desktop-nav {
+/* Tablet - 1200px and below */
+@media screen and (max-width: 1200px) {
+  #desktop-nav {
     display: none;
-   } 
-   #hamburger-nav {
+  }
+  
+  #hamburger-nav {
     display: flex;
-   }
-   #experience,
-   .experience-details-container {
-     margin-top: 2rem;
-   }
-   #profile,
-   .section-container {
-     display: block;
-   }
-   .arrow {
-     display: none;
-   }
-   section,
-   .section-container {
-     height: fit-content;
-   }
-   section {
-     margin: 0 5%;
-   }
-   .section__pic-container {
-     width: 275px;
-     height: 275px;
-     margin: 0 auto 2rem;
-   }
-   .about-containers {
-     margin-top: 0;
-   }
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 5%;
+    height: auto;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-light);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  #experience,
+  .experience-details-container {
+    margin-top: 1.5rem;
+  }
+  
+  #profile,
+  .section-container {
+    display: block;
+  }
+  
+  .arrow {
+    display: none;
+  }
+  
+  section,
+  .section-container {
+    height: fit-content;
+  }
+  
+  section {
+    margin: 0 5%;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  
+  .section__pic-container {
+    width: 260px;
+    height: 260px;
+    margin: 0 auto 2rem;
+  }
+  
+  #profile .section__pic-container img {
+    width: 260px;
+    height: 260px;
+  }
+  
+  .about-containers {
+    margin-top: 0;
+  }
+  
+  .about-pic {
+    width: 280px;
+    height: auto;
+    margin: 0 auto 2rem;
+    display: block;
+  }
+  
+  #about .section__pic-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+  }
+  
+  /* Skills list adjustments */
+  .skills-list {
+    justify-content: center;
+  }
+  
+  /* Buttons - tablet */
+  .btn-container {
+    gap: 1rem;
+  }
+  
+  .btn {
+    padding: 0.875rem 1.25rem;
+    font-size: 0.9rem;
+    min-width: 130px;
+  }
+  
+  /* Hero animations - reduce delay on smaller screens */
+  #profile .section__text__p1,
+  #profile .title,
+  .section__text__p2,
+  .btn-container,
+  #socials-container {
+    animation-delay: 0.1s;
+    opacity: 1;
+  }
+  
+  /* Contact section */
+  .contact-info-upper-container {
+    padding: 2rem;
+    gap: 1.5rem;
+  }
+  
+  .contact-info-container {
+    padding: 1rem;
+  }
 }
 
+/* Mobile - 768px and below */
+@media screen and (max-width: 768px) {
+  section {
+    margin: 0 4%;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    min-height: auto;
+  }
+  
+  .title {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .section__text__p1 {
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+  }
+  
+  /* Experience cards grid */
+  #experience .about-containers {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  #experience .details-container {
+    padding: 1.5rem;
+  }
+  
+  .experience-sub-title {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .skills-list {
+    gap: 0.5rem;
+  }
+  
+  .skills-list article {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.8rem;
+  }
+  
+  .skills-list article .icon {
+    width: 14px;
+    height: 14px;
+    min-width: 14px;
+  }
+  
+  /* Project cards */
+  .details-container.color-container {
+    margin-bottom: 1.5rem;
+  }
+  
+  .project-img-container,
+  .details-container.color-container .article-container {
+    height: 200px;
+  }
+}
+
+/* Mobile - 600px and below */
 @media screen and (max-width: 600px) {
-   #contact,
-   footer {
-     height: 40vh;
-   }
-   #profile {
-     height: 83vh;
-     margin-bottom: 0;
-   }
-   article {
-     font-size: 1rem;
-   }
-   footer nav {
-     height: fit-content;
-     margin-bottom: 2rem;
-   }
-   .about-containers,
-   .contact-info-upper-container,
-   .btn-container {
-     flex-wrap: wrap;
-   }
-   .contact-info-container {
-     margin: 0;
-   }
-   .contact-info-container p,
-   .nav-links li a {
-     font-size: 1rem;
-   }
-   .experience-sub-title {
-     font-size: 1.25rem;
-   }
-   .logo {
-     font-size: 1.5rem;
-   }
-   .nav-links {
-     flex-direction: column;
-     gap: 0.5rem;
-     text-align: center;
-   }
-   .section__pic-container {
-     width: auto;
-     height: 46vw;
-     justify-content: center;
-   }
-   .section__text__p2 {
-     font-size: 1.25rem;
-   }
-   .title {
-     font-size: 2rem;
-   }
-   .text-container {
-     text-align: justify;
-   }
- }
+  /* Navigation */
+  #hamburger-nav {
+    padding: 1rem 4%;
+  }
+  
+  .logo {
+    font-size: 1.25rem;
+    background: var(--gradient-burgundy);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .menu-links {
+    min-width: 180px;
+    border-radius: 1rem;
+  }
+  
+  .menu-links a {
+    padding: 0.875rem 1.25rem;
+    font-size: 0.95rem;
+  }
+  
+  /* Profile/Hero Section */
+  #profile {
+    height: fit-content;
+    min-height: auto;
+    margin-bottom: 0;
+    padding: 3rem 0 2rem;
+  }
+  
+  #profile::before {
+    animation: none;
+    background: linear-gradient(135deg, 
+      rgba(128, 0, 32, 0.04) 0%, 
+      rgba(244, 241, 222, 0.9) 100%);
+  }
+  
+  .section__pic-container {
+    width: 180px;
+    height: 180px;
+    margin: 0 auto 1.5rem;
+  }
+  
+  #profile .section__pic-container img {
+    width: 180px;
+    height: 180px;
+    border-width: 3px;
+  }
+  
+  #profile .section__pic-container::after {
+    display: none;
+  }
+  
+  .section__text__p2 {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .title {
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Buttons - Mobile Stack */
+  .btn-container {
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: center;
+    width: 100%;
+    padding: 0 1rem;
+  }
+  
+  .btn {
+    width: 100%;
+    max-width: 280px;
+    padding: 0.875rem 1.5rem;
+    font-size: 0.9rem;
+    min-height: 48px;
+    justify-content: center;
+  }
+  
+  .btn-color-1 {
+    box-shadow: 0 4px 12px rgba(128, 0, 32, 0.25);
+  }
+  
+  .btn-color-2 {
+    border-width: 2px;
+  }
+  
+  /* Social icons */
+  #socials-container {
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+  }
+  
+  #socials-container .icon {
+    height: 2.5rem;
+    width: 2.5rem;
+    padding: 0.4rem;
+  }
+  
+  /* About Section */
+  #about {
+    padding-top: 2rem;
+  }
+  
+  #about .section-container {
+    gap: 2rem;
+  }
+  
+  .about-pic {
+    width: 220px;
+    border-radius: 1.5rem;
+  }
+  
+  .about-containers {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .details-container {
+    padding: 1.25rem;
+    min-width: auto;
+    border-radius: 1.25rem;
+    border-left-width: 3px;
+  }
+  
+  .details-container h3 {
+    font-size: 1rem;
+    margin: 0.4rem 0;
+  }
+  
+  .details-container p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+  
+  .details-container .icon {
+    height: 1.75rem;
+    width: 1.75rem;
+  }
+  
+  .text-container {
+    text-align: left;
+  }
+  
+  .text-container p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+  
+  /* Experience Section */
+  #experience {
+    padding-top: 2rem;
+  }
+  
+  .experience-details-container {
+    padding: 0;
+  }
+  
+  #experience .details-container {
+    padding: 1.25rem;
+    border-top-width: 3px;
+    border-radius: 1.25rem;
+  }
+  
+  .experience-sub-title {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .experience-sub-title::after {
+    width: 30px;
+    height: 2px;
+  }
+  
+  .skills-list {
+    gap: 0.4rem;
+    justify-content: flex-start;
+  }
+  
+  .skills-list article {
+    padding: 0.35rem 0.65rem;
+    font-size: 0.75rem;
+    border-radius: 1rem;
+  }
+  
+  .skills-list h3 {
+    font-size: 0.75rem;
+  }
+  
+  .skills-list article .icon {
+    width: 12px;
+    height: 12px;
+    min-width: 12px;
+  }
+  
+  /* Projects Section */
+  #projects {
+    padding-top: 2rem;
+  }
+  
+  .details-container.color-container {
+    margin: 0 0 1.25rem;
+    border-radius: 1.25rem;
+  }
+  
+  .project-img-container,
+  .details-container.color-container .article-container {
+    height: 180px;
+    border-radius: 1.25rem 1.25rem 0 0;
+  }
+  
+  .project-img {
+    border-radius: 1.25rem 1.25rem 0 0;
+  }
+  
+  .project-title {
+    font-size: 1.1rem;
+    margin: 1rem 1rem 0.5rem;
+  }
+  
+  .details-container.color-container .btn-container {
+    flex-direction: row;
+    padding: 0.75rem 1rem 1rem;
+    gap: 0.75rem;
+  }
+  
+  .project-btn {
+    flex: 1;
+    padding: 0.65rem 0.75rem;
+    font-size: 0.8rem;
+    min-height: 44px;
+    max-width: none;
+    width: auto;
+  }
+  
+  /* Contact Section */
+  #contact {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  
+  .contact-info-upper-container {
+    gap: 0.75rem;
+    padding: 1.25rem;
+    border-radius: 1.25rem;
+    flex-direction: column;
+  }
+  
+  .contact-info-container {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    border-radius: 1rem;
+    justify-content: flex-start;
+  }
+  
+  .contact-info-container:hover {
+    transform: none;
+    border-color: var(--burgundy-rose);
+  }
+  
+  .contact-icon {
+    height: 1.75rem;
+    width: 1.75rem;
+  }
+  
+  .contact-link {
+    font-size: 0.9rem;
+  }
+  
+  /* Footer */
+  footer {
+    height: fit-content;
+    padding: 2rem 1rem;
+    margin-top: 0;
+  }
+  
+  footer nav {
+    height: fit-content;
+    margin-bottom: 1rem;
+  }
+  
+  footer .nav-links {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+  
+  footer .nav-links a {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+  
+  footer p {
+    font-size: 0.8rem;
+  }
+  
+  /* Touch targets */
+  .btn,
+  .icon,
+  .nav-links a,
+  .contact-link {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+  
+  /* Disable hover effects on mobile */
+  .details-container:hover,
+  .details-container.color-container:hover {
+    transform: none;
+    box-shadow: var(--shadow-md);
+  }
+  
+  #profile .section__pic-container img {
+    animation: none;
+  }
+  
+  /* Ensure all animations are instant on mobile */
+  #profile .section__text__p1,
+  #profile .title,
+  .section__text__p2,
+  .btn-container,
+  #socials-container {
+    animation: none;
+    opacity: 1;
+  }
+}
+
+/* Very small screens - 400px and below */
+@media screen and (max-width: 400px) {
+  section {
+    margin: 0 3%;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+  
+  .logo {
+    font-size: 1.1rem;
+  }
+  
+  .hamburger-icon {
+    width: 26px;
+    height: 20px;
+  }
+  
+  .section__pic-container {
+    width: 150px;
+    height: 150px;
+  }
+  
+  #profile .section__pic-container img {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .title {
+    font-size: 1.4rem;
+  }
+  
+  .section__text__p2 {
+    font-size: 1rem;
+  }
+  
+  .btn {
+    padding: 0.75rem 1rem;
+    font-size: 0.85rem;
+    max-width: 100%;
+  }
+  
+  .about-pic {
+    width: 180px;
+  }
+  
+  .details-container {
+    padding: 1rem;
+  }
+  
+  .skills-list article {
+    padding: 0.3rem 0.5rem;
+    font-size: 0.7rem;
+  }
+  
+  .project-title {
+    font-size: 1rem;
+  }
+  
+  .project-btn {
+    padding: 0.6rem 0.5rem;
+    font-size: 0.75rem;
+  }
+  
+  .contact-info-upper-container {
+    padding: 1rem;
+  }
+  
+  .contact-info-container {
+    padding: 0.75rem;
+  }
+  
+  .contact-link {
+    font-size: 0.85rem;
+  }
+}
