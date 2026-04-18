@@ -554,11 +554,34 @@ section {
 }
 
 .section__text__p2 {
-  font-size: var(--font-size-2xl);
-  margin-bottom: 1rem;
+  font-size: var(--font-size-xl);
+  margin-bottom: 0.5rem;
   color: var(--burgundy-deep);
+  font-weight: 600;
   animation: fadeInUp 0.8s var(--ease-out-expo) forwards;
   animation-delay: 0.5s;
+  opacity: 0;
+}
+
+.section__text__p3 {
+  font-size: var(--font-size-lg);
+  margin-bottom: 1rem;
+  color: var(--text-secondary);
+  font-weight: 400;
+  animation: fadeInUp 0.8s var(--ease-out-expo) forwards;
+  animation-delay: 0.55s;
+  opacity: 0;
+}
+
+.section__text__tagline {
+  font-size: var(--font-size-base);
+  color: var(--text-secondary);
+  font-weight: 400;
+  max-width: 500px;
+  margin: 0 auto 1.5rem;
+  line-height: 1.6;
+  animation: fadeInUp 0.8s var(--ease-out-expo) forwards;
+  animation-delay: 0.6s;
   opacity: 0;
 }
 
@@ -809,6 +832,61 @@ section {
   margin-bottom: 1rem;
 }
 
+/* Skills Grid - Modern Card Layout */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.skill-card {
+  background: #fff;
+  border: 0.5px solid var(--border-light);
+  border-radius: 12px;
+  padding: 1.75rem;
+  min-height: 180px;
+}
+
+.skill-card__title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 0.5rem 0;
+}
+
+.skill-card__accent {
+  width: 28px;
+  height: 2px;
+  background: #8B1A3A;
+  margin-bottom: 1rem;
+}
+
+.skill-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skill-tag {
+  display: inline-block;
+  font-size: 13px;
+  padding: 5px 14px;
+  border-radius: 20px;
+  background: var(--background-secondary);
+  color: var(--text-secondary);
+  border: 0.5px solid var(--border-light);
+}
+
+/* Legacy experience styles kept for compatibility */
 .experience-sub-title {
   color: var(--burgundy-deep);
   font-weight: 600;
@@ -879,8 +957,10 @@ section {
 }
 
 .skills-list article .icon {
+  width: 1.25rem;
   min-width: 1.25rem;
   height: 1.25rem;
+  object-fit: contain;
   filter: hue-rotate(320deg) saturate(1.5);
 }
 
@@ -909,6 +989,11 @@ section {
 #projects .title {
   position: relative;
   z-index: 10;
+}
+
+/* Projects 2x2 Grid */
+#projects .about-containers {
+  grid-template-columns: repeat(2, 1fr);
 }
 
 /* Project Cards Container */
@@ -1000,6 +1085,43 @@ section {
   color: var(--text-primary);
   font-size: var(--font-size-xl);
   font-weight: 600;
+}
+
+/* Project details container */
+.project-details {
+  padding: 0 1.5rem;
+  margin-bottom: 1rem;
+  flex-grow: 1;
+}
+
+.project-subtitle {
+  color: var(--burgundy-deep);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.75rem;
+}
+
+.project-description {
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+}
+
+.project-tech {
+  color: var(--burgundy-wine);
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+}
+
+.project-role {
+  color: var(--text-secondary);
+  font-size: var(--font-size-xs);
+  font-style: italic;
+  line-height: 1.5;
 }
 
 /* Project buttons */

@@ -189,6 +189,7 @@
     width: 14px;
     height: 14px;
     min-width: 14px;
+    object-fit: contain;
   }
   
   /* Project cards */
@@ -199,6 +200,10 @@
   .project-img-container,
   .details-container.color-container .article-container {
     height: 200px;
+  }
+  
+  #projects .about-containers {
+    grid-template-columns: 1fr;
   }
 }
 
