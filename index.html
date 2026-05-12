@@ -30,7 +30,7 @@
     <link rel="stylesheet" href="mediaqueries.css" />
     <script>
       (function () {
-        if (localStorage.getItem('theme') === 'dark') {
+        if (localStorage.getItem('theme') !== 'light') {
           document.documentElement.classList.add('dark');
         }
       })();

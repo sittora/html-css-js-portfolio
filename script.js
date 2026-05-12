@@ -11,7 +11,7 @@ function toggleTheme() {
 
 function initThemeToggle() {
   const saved = localStorage.getItem('theme');
-  if (saved === 'dark') {
+  if (saved !== 'light') {
     document.documentElement.classList.add('dark');
   }
 }
