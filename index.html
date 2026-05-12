@@ -28,6 +28,13 @@
     <title>Sitora Everman - Software Engineer</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="mediaqueries.css" />
+    <script>
+      (function () {
+        if (localStorage.getItem('theme') === 'dark') {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
   </head>
   <body>
     <!-- Skip Link for Accessibility -->
@@ -44,10 +51,43 @@
           <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
+      <button class="theme-toggle" aria-label="Toggle dark mode" onclick="toggleTheme()">
+        <svg class="theme-icon sun-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <svg class="theme-icon moon-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </button>
     </nav>
     <nav id="hamburger-nav">
       <div class="logo">Sitora Everman</div>
-      <div class="hamburger-menu">
+      <div class="hamburger-right">
+        <button class="theme-toggle" aria-label="Toggle dark mode" onclick="toggleTheme()">
+          <svg class="theme-icon sun-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="theme-icon moon-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+        <div class="hamburger-menu">
         <div class="hamburger-icon" onclick="toggleMenu()">
           <span></span>
           <span></span>
@@ -60,6 +100,7 @@
           <li><a href="https://medium.com/@sittora" target="_blank" onclick="toggleMenu()">Blog</a></li>
           <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
         </div>
+      </div>
       </div>
     </nav>
     <section id="profile">
@@ -113,20 +154,18 @@
             <div class="about-details-container">
                 <div class="about-containers">
                 <div class="details-container">
-                    <img 
-                    src="./assets/experience.png" 
-                    alt="Experience icon" 
-                    class="icon"
-                    />
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true">
+                      <polyline points="16 18 22 12 16 6"></polyline>
+                      <polyline points="8 6 2 12 8 18"></polyline>
+                    </svg>
                     <h3>Experience</h3>
-                    <p> 3+ years <br/>Full Stack Development</p>
+                    <p>Full Stack Developer since 2021</p>
                   </div>
                   <div class="details-container">
-                    <img
-                      src="./assets/education.png"
-                      alt="Education icon"
-                      class="icon"
-                    />
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true">
+                      <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                      <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                    </svg>
                     <h3>Education</h3>
                     <p><b>Flatiron School</b> Software Engineering <br/><b> Berkeley College </b> Bachelor of Business Administration (BBA) in International Business</p>
                   </div>
@@ -218,6 +257,29 @@
         <div class="about-containers">
       <div class="details-container color-container">
         <div class="article-container">
+          <img src="./assets/project-4.png" 
+          alt="ClearMind Project" 
+          class="project-img"
+          />
+        </div>
+        <h2 class="experience-sub-title project-title">ClearMind</h2>
+        <div class="project-details">
+          <p class="project-subtitle">Mental Health Platform</p>
+          <p class="project-description">Built with a partner, ClearMind is a full-stack mental health platform matching users with licensed psychologists through an adaptive questionnaire. Features a psychologist directory, appointment booking, and dedicated admin and therapist panels.</p>
+          <p class="project-tech">React · Vite · Node.js · Express · MongoDB · JWT</p>
+          <p class="project-role">Co-built the full application with an equal partner, I focused on frontend development, UI design, component architecture, and user flows across all panels, and handled deployment. Both contributors worked across the entire stack throughout the project, with my partner bringing a stronger focus on backend architecture.</p>
+        </div>
+        <div class="btn-container">
+          <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/AureaCatena/clear-mind'">
+            Github
+          </button>
+          <button class="btn btn-color-2 project-btn" onclick="location.href='https://clear-mind-eta.vercel.app'">
+            Website
+          </button>
+        </div>
+      </div>
+      <div class="details-container color-container">
+        <div class="article-container">
           <img src="./assets/project-1.png" 
           alt="Project 1" 
           class="project-img"
@@ -226,7 +288,7 @@
         <h2 class="experience-sub-title project-title">Luminaria</h2>
         <div class="project-details">
           <p class="project-subtitle">Library Management App</p>
-          <p class="project-description">A collaborative full-stack app for discovering and managing books, with personalized reading lists, a rating system, and OAuth authentication. Integrated the Open Library API for real-time book data.</p>
+          <p class="project-description">Designed and developed as a team, Luminaria is a full-stack app for discovering and managing books, with personalized reading lists, a rating system, and OAuth authentication. Integrated the Open Library API for real-time book data.</p>
           <p class="project-tech">Next.js · TypeScript · MongoDB · TailwindCSS · NextAuth · Vercel</p>
           <p class="project-role">Led UI/UX design in Figma, implemented core features (search, ratings, reading lists), and managed deployment + CI/CD on Vercel. Built in an Agile team with daily stand-ups and code reviews.</p>
         </div>
@@ -249,7 +311,7 @@
         <h2 class="experience-sub-title project-title">Booktown</h2>
         <div class="project-details">
           <p class="project-subtitle">eCommerce Bookstore</p>
-          <p class="project-description">A collaborative full-stack bookstore app where users can search, browse, and purchase books powered by the Open Library API for a comprehensive book catalog and Firebase for secure authentication and data storage.</p>
+          <p class="project-description">A team-built full-stack bookstore where users can search, browse, and purchase books powered by the Open Library API for a comprehensive book catalog and Firebase for secure authentication and data storage.</p>
           <p class="project-tech">JavaScript · React.js · Chakra UI · Redux.js · Firebase · Netlify</p>
           <p class="project-role">Built the frontend UI, integrated the Open Library API, implemented Redux for state management, and set up Firebase authentication. Agile team stand-ups, code reviews, pair programming.</p>
         </div>
@@ -288,28 +350,6 @@
           </button>
           <button class="btn btn-color-2 project-btn" onclick="location.href='https://vimeo.com/659123802'">
             Live Demo
-          </button>
-        </div>
-      </div>
-      <div class="details-container color-container">
-        <div class="article-container">
-          <img src="./assets/project-4.png" 
-          alt="ClearMind Project" 
-          class="project-img"
-          />
-        </div>
-        <h2 class="experience-sub-title project-title">ClearMind</h2>
-        <div class="project-details">
-          <p class="project-subtitle">Mental Health Platform</p>
-          <p class="project-description">A full-stack mental health platform that matches users with licensed psychologists through an adaptive questionnaire. Features include a psychologist directory, appointment booking, and dedicated admin and therapist panels.</p>
-          <p class="project-tech">React · Vite · Node.js · Express · MongoDB · JWT</p>
-        </div>
-        <div class="btn-container">
-          <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/AureaCatena/clear-mind'">
-            Github
-          </button>
-          <button class="btn btn-color-2 project-btn" onclick="location.href='https://clear-mind-eta.vercel.app'">
-            Website
           </button>
         </div>
       </div></div>

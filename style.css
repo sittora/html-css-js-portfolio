@@ -787,6 +787,12 @@ section {
   filter: none;
 }
 
+.details-container svg.icon {
+  width: 2rem;
+  height: 2rem;
+  color: var(--burgundy-deep);
+}
+
 .details-container h3 {
   color: var(--burgundy-deep);
   margin: 0.5rem 0;
@@ -1332,3 +1338,190 @@ footer p {
 .bg-cream { background: var(--cream); }
 .gradient-burgundy { background: var(--gradient-burgundy); }
 .shadow-burgundy { box-shadow: var(--shadow-glow); }
+
+/* ================================================================
+   DARK MODE
+   ================================================================ */
+
+/* Dark mode CSS variable overrides */
+html.dark {
+  --background-primary: #111111;
+  --background-secondary: #1a1a1a;
+  --cream: #1a1a1a;
+  --cream-light: #1f1f1f;
+  --text-primary: #f0f0f0;
+  --text-secondary: #a0a0a0;
+  --text-light: #f0f0f0;
+  --border-light: rgba(255, 255, 255, 0.08);
+  --border-medium: rgba(255, 255, 255, 0.15);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.6);
+  --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.7);
+  --gradient-hero: linear-gradient(135deg,
+    rgba(139, 26, 58, 0.1) 0%,
+    rgba(212, 175, 55, 0.05) 25%,
+    rgba(114, 47, 55, 0.08) 50%,
+    rgba(17, 17, 17, 0.97) 100%);
+}
+
+/* Smooth transitions for theme switching */
+body,
+section,
+nav,
+footer,
+.details-container,
+.skill-card,
+.menu-links,
+.contact-info-upper-container,
+.contact-info-container {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+html.dark body {
+  background: linear-gradient(160deg, #111111 0%, #1a0a0f 50%, #111111 100%);
+  background-attachment: fixed;
+}
+
+/* Hardcoded color overrides for dark mode */
+html.dark section {
+  background: transparent;
+}
+
+html.dark .details-container {
+  background: #1a1a1a;
+}
+
+html.dark .color-container {
+  background: #1a1a1a;
+}
+
+html.dark .skill-card {
+  background: #1a1a1a;
+}
+
+html.dark .skill-tag {
+  background: #222222;
+}
+
+/* Fix 1 & 3: LinkedIn / GitHub icon buttons in dark mode (desktop + mobile) */
+html.dark #socials-container .icon {
+  background: transparent;
+  border: 1.5px solid #8B1A3A;
+  filter: brightness(0) saturate(100%) invert(13%) sepia(72%) saturate(1200%) hue-rotate(320deg) brightness(90%);
+}
+
+html.dark #socials-container .icon:hover {
+  background: rgba(139, 26, 58, 0.1);
+  border-color: #8B1A3A;
+  box-shadow: var(--shadow-md);
+}
+
+/* Contact section — dark mode */
+html.dark .contact-info-upper-container {
+  background: #1a1a1a;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+html.dark .contact-info-container {
+  background: transparent;
+  border: 1.5px solid #8B1A3A;
+}
+
+html.dark .contact-info-container:hover {
+  background: rgba(139, 26, 58, 0.1);
+  border-color: #8B1A3A;
+}
+
+html.dark .contact-link {
+  color: #f0f0f0;
+}
+
+html.dark .contact-link:hover {
+  color: #f0f0f0;
+}
+
+html.dark .contact-icon {
+  filter: brightness(0) saturate(100%) invert(13%) sepia(72%) saturate(1200%) hue-rotate(320deg) brightness(90%);
+}
+
+/* Fix 3 (mobile): ensure 44px tap targets and comfortable spacing */
+@media screen and (max-width: 768px) {
+  html.dark #socials-container {
+    gap: 1.25rem;
+  }
+
+  html.dark #socials-container .icon {
+    min-height: 44px;
+    min-width: 44px;
+    height: 2.75rem;
+    width: 2.75rem;
+  }
+}
+
+/* Fix 2: remove the hardcoded cream gradient overlay on mobile in dark mode */
+@media screen and (max-width: 600px) {
+  html.dark #profile::before {
+    background: none;
+  }
+}
+
+/* Hamburger nav sticky bar in dark mode */
+@media screen and (max-width: 1200px) {
+  html.dark #hamburger-nav {
+    background: rgba(17, 17, 17, 0.95);
+  }
+}
+
+/* ================================================================
+   THEME TOGGLE BUTTON
+   ================================================================ */
+
+.theme-toggle {
+  background: none;
+  border: 1.5px solid var(--border-medium);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  width: 2.25rem;
+  height: 2.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-primary);
+  transition: all 0.3s var(--ease-smooth);
+  flex-shrink: 0;
+}
+
+.theme-toggle:hover {
+  background: rgba(128, 0, 32, 0.1);
+  border-color: var(--burgundy-rose);
+  transform: rotate(15deg);
+}
+
+html.dark .theme-toggle:hover {
+  background: rgba(139, 26, 58, 0.2);
+}
+
+/* Show sun in dark mode, moon in light mode */
+.theme-toggle .sun-icon {
+  display: none;
+}
+
+.theme-toggle .moon-icon {
+  display: block;
+}
+
+html.dark .theme-toggle .sun-icon {
+  display: block;
+}
+
+html.dark .theme-toggle .moon-icon {
+  display: none;
+}
+
+/* Wrapper for hamburger toggle + hamburger icon */
+.hamburger-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}

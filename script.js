@@ -3,6 +3,19 @@
    Burgundy Theme with Professional Animations
    ================================================================ */
 
+// ===== DARK MODE TOGGLE =====
+function toggleTheme() {
+  const isDark = document.documentElement.classList.toggle('dark');
+  localStorage.setItem('theme', isDark ? 'dark' : 'light');
+}
+
+function initThemeToggle() {
+  const saved = localStorage.getItem('theme');
+  if (saved === 'dark') {
+    document.documentElement.classList.add('dark');
+  }
+}
+
 // ===== HAMBURGER MENU TOGGLE =====
 function toggleMenu() {
   const menu = document.querySelector(".menu-links");
@@ -117,6 +130,7 @@ function initNavHighlight() {
 
 // ===== INITIALIZE ALL SCRIPTS =====
 document.addEventListener('DOMContentLoaded', () => {
+  initThemeToggle();
   initScrollProgress();
   initScrollReveal();
   initSmoothScroll();
